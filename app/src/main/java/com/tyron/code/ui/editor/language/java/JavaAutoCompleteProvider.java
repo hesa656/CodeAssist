@@ -50,26 +50,11 @@ public class JavaAutoCompleteProvider implements AutoCompleteProvider {
         if (!mPreferences.getBoolean("code_editor_completion", true)) {
             return Collections.emptyList();
         }
-        if (CompletionEngine.isIndexing()) {
-            return Collections.emptyList();
-        }
 
         Project currentProject = ProjectManager.getInstance().getCurrentProject();
         List<CompletionItem> result = new ArrayList<>();
-        if (currentProject != null) {
-            CompletionList completionList = CompletionEngine.getInstance().complete(currentProject,
-                    mEditor.getCurrentFile(),
-                    currentProject.getFileManager().readFile(mEditor.getCurrentFile()),
-                    mEditor.getCursor().getLeft());
 
-            for (com.tyron.completion.model.CompletionItem item : completionList.items) {
-                result.add(new CompletionItem(item));
-            }
-            return result;
-        } else {
-            Log.w("JavaAutoCompleteProvider", "Current project is null");
-        }
-        return null;
+        return result;
     }
 
     @SuppressWarnings("all")
