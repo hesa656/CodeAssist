@@ -15,7 +15,7 @@
     <item name="replaceAll" type="string">Zamień Wszystkie</item>
     <item name="replacement" type="string">Zamiennik</item>
     <item name="cancel" type="string">Anuluj</item>
-    <item name="text_to_search" type="string">Tekst do wyszukania</item>
+    <item name="text_to_search" type="string">Tekst do Wyszukania</item>
 
     <item name="more" translatable="false" type="string">Więcej</item>
 
